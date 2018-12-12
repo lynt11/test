@@ -42,7 +42,7 @@ func RPCSever(ch chan string) {
 		//打印接收到的数据
 		fmt.Println("sever received:",data)
 		//模拟超时
-		time.Sleep(time.Second*2)
+		//time.Sleep(time.Second*2)
 		//向客户端反馈已收到
 		ch<-"roger"
 	}
