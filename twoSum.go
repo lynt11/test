@@ -3,14 +3,14 @@ package main
 import "fmt"
 
 func twoSum(nums []int, target int) []int {
+	maps := make(map[int]int)
 	for i, v := range nums {
-		if i == len(nums)-1 {
-			return []int{-1, -1}
-		}
-		for j := i + 1; j < len(nums); j++ {
-			if res := v + nums[j]; res == target {
-				return []int{i, j}
-			}
+		maps[v] = i
+	}
+	for i, v := range nums {
+		temp := target - v
+		if _, isok := maps[temp]; isok && maps[temp] != i {
+			return []int{i, maps[temp]}
 		}
 	}
 	return []int{-1, -1}
