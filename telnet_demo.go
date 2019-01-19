@@ -105,5 +105,4 @@ func main() {
 	code := <-exitchan
 	//标记程序返回值并退出
 	os.Exit(code)
-
 }
